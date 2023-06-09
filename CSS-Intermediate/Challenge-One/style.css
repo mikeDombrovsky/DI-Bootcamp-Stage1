@@ -1,6 +1,5 @@
 * {
     margin: 0;
-    /* padding: 0; */
     box-sizing: border-box;
 }
 
@@ -13,19 +12,19 @@ body {
     margin: 0 auto;
 }
 
-.flexbox {
-    display: flex;
-    align-items: stretch;
+.float_father {
+    height: 400px;
 }
 
 #nav {
     background-color: rgb(223, 209, 255);
-    width: 60%;
+    width: 27%;
     padding: 20px;
-    align-items: center;
+    float: left;
+    height: 100%;
 }
 
-nav>ul li a{
+nav>ul li a {
     color: blue;
 }
 
@@ -33,6 +32,9 @@ nav>ul li a{
     padding: 20px 5px 5px 5px;
     text-align: center;
     background-color: cornflowerblue;
+    float: right;
+    width: 73%;
+    height: 100%;
 }
 
 #content>ul {
@@ -46,6 +48,7 @@ nav>ul li a{
 footer {
     display: block;
     padding: 10px;
+    clear: both;
 }
 
 .copyright {
