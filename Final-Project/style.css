@@ -52,20 +52,20 @@ section {
 }
 
 section#home {
-
-    background-image: url("./sergey3.jpg");
+    background-image: url("./sergey3-2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     padding-top: 40px;
 }
 
-#home>h1,
-h2,
-h6 {
+section#home:hover {
+    background-image: url("./sergey3.jpg");
+}
+
+.header {
     display: inline-block;
-    margin: 10px 0;
+    margin: 30px 0;
     padding: 10px;
     border-radius: 0 3px 3px 0;
     background-color: rgba(255, 255, 255, 0.39);
@@ -80,7 +80,7 @@ section#bio {
     background-image: url("./sergey-sleeps.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    
+
     padding-top: 40px;
 }
 
@@ -94,8 +94,8 @@ article.biography {
 article.biography p {
     padding: 15px;
     font-size: 1.5em;
+    background-color: rgba(255, 255, 255, 0.39);
+    border-radius: 3px;
 }
 
-section#achievements {
-
-}
+section#achievements {}
