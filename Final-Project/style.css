@@ -7,24 +7,28 @@
 }
 
 body {
+    overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
-}
-
-.wrapper {
-    width: 700px;
-    margin: 0 auto;
 }
 
 nav {
     position: fixed;
-    width: 700px;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 1;
+    background-color: darkgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
-ul {
-    list-style-type: none;
+ul.nav {
     display: flex;
-    justify-content: space-between;
-    align-content: stretch;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
 }
 
 li {
@@ -37,7 +41,7 @@ a {
     text-decoration: none;
     color: black;
     background-color: rgba(255, 255, 255, 0.7);
-    display: block
+    display: block;
 }
 
 li:hover {
@@ -49,14 +53,15 @@ li:hover {
 section {
     height: 100dvh;
     background-color: rgb(230, 229, 229);
+    padding-top: 150px;
 }
 
+/* --home-- */
 section#home {
     background-image: url("./sergey3-2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding-top: 40px;
 }
 
 section#home:hover {
@@ -71,43 +76,46 @@ section#home:hover {
     background-color: rgba(255, 255, 255, 0.39);
 }
 
-#home>h6 {
+#home h5 {
     font-style: italic;
     font-weight: normal;
 }
 
+/* --bio-- */
 section#bio {
     min-height: 150vh;
     background-image: url("./sergey-sleeps.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
-    padding-top: 40px;
 }
 
 article.biography {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 10px;
 }
 
 article.biography p {
-    margin-top: 15px;
+    margin: 15px;
     padding: 15px;
     font-size: 1.2em;
     background-color: rgba(255, 255, 255, 0.39);
     border-radius: 3px;
 }
 
-section#achievements {
-    padding: 15px;
-    padding-top: 40px;
+article.biography video {
+    margin: 15px;
 }
 
-.container {
+/* --achievements-- */
+section#achievements {
+    padding: 35px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .card {
@@ -133,13 +141,19 @@ section#achievements {
     align-items: center;
 }
 
+.card>img:first-child:hover {
+    transform: scale(3);
+    transition-duration: 1s;
+    translate: 100px;
+}
+
+/* --more_info-- */
 #more_info {
     background-image: url(./sergey-sleeps2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 20px;
-    padding-top: 50px;
+    padding: 50px;
 }
 
 #more_info div {
@@ -149,12 +163,66 @@ section#achievements {
 }
 
 #more_info div * {
-    display: inline-block;
-    margin: 10px;
+    display: flex;
+    margin: 25px;
     text-align: center;
+    align-items: center;
 }
 
+/* --footer-- */
 footer {
     text-align: center;
     padding: 10px;
+}
+
+
+@media screen and (max-width:650px) {
+    nav {
+        height: 160px;
+        background-color: unset;
+        justify-content: right;
+    }
+
+    ul.nav {
+        flex-direction: column;
+        width: 30%;
+    }
+
+    section {
+        padding-top: 160px;
+    }
+
+    article.biography {
+        flex-direction: column;
+        font-size: 0.6em;
+    }
+
+    section#achievements {
+        justify-content: end;
+    }
+
+    section#achievements img:nth-child(2){
+        display: none;
+    }
+
+    .card {
+        height: 150px;
+        margin: 5px 0;
+    }
+
+    .card>img,
+    .card>span {
+        width: 120px;
+        height: 120px;
+    }
+
+    #more_info {
+        padding-top: 190px;
+    }
+
+    #more_info div {
+
+        flex-direction: column;
+        justify-content: center;
+    }
 }
